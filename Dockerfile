@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-LABEL maintainer="Parkeymon"
+LABEL maintainer="Parkeymon, EsserGaming"
 USER root
 RUN echo "Building.."
 RUN apt-get update
@@ -17,13 +17,8 @@ RUN apt-get install -y wget
 RUN apt-get install -y lib32gcc1
 RUN apt-get update
 RUN curl -fsSL https://deb.nodesource.com/setup_15.x | bash -
-RUN apt-get install -y nodejs
-RUN npm -v
-RUN npm install -g npm
 RUN apt-get update
 RUN dpkg --add-architecture i386
-RUN apt-get update
-RUN npm install --global yarn
 RUN apt-get update
 RUN apt-get install -y mono-complete
 RUN adduser --home /home/container container --disabled-password --gecos "" --uid 999
