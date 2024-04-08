@@ -9,13 +9,17 @@ RUN echo "deb https://download.mono-project.com/repo/ubuntu stable-focal main" |
 RUN apt-get update
 ENV DEBIAN_FRONTEND=noninteractive
 
+
 RUN apt-get update
 RUN apt-get install -y ffmpeg
 RUN ffmpeg -version
-RUN apt install -y dotnet-sdk-8.0 aspnetcore-runtime-8.0
 RUN apt-get install -y curl
 RUN apt-get install -y wget
 RUN apt-get install -y lib32gcc1
+RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+RUN dpkg -i packages-microsoft-prod.deb
+RUN rm packages-microsoft-prod.deb
+RUN apt-get update && apt-get install -y aspnetcore-runtime-8.0
 RUN apt-get update
 RUN curl -fsSL https://deb.nodesource.com/setup_15.x | bash -
 RUN apt-get update
