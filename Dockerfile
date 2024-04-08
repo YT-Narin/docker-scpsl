@@ -12,6 +12,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
 RUN apt-get install -y ffmpeg
 RUN ffmpeg -version
+RUN apt install -y dotnet-sdk-8.0 aspnetcore-runtime-8.0
 RUN apt-get install -y curl
 RUN apt-get install -y wget
 RUN apt-get install -y lib32gcc1
