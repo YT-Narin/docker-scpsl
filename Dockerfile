@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-LABEL maintainer="Parkeymon, EsserGaming"
+LABEL maintainer="Parkeymon, EsserGaming, Narin"
 USER root
 RUN echo "Building.."
 RUN apt-get update
